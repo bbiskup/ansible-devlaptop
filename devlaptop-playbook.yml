@@ -51,6 +51,7 @@
       - bmon
       - vnstat
       - nethogs
+      - kwin-common
       
 
 # packages not available
