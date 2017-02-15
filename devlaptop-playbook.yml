@@ -1,0 +1,59 @@
+- hosts: devlaptops
+  tasks:
+  - name: install packages
+    sudo: yes
+    apt:
+      name: "{{item}}"
+      state: present
+    with_items:
+      - htop
+      - vim
+      - git
+      - gcalcli
+      - virtualbox
+      - lynx
+      - vagrant
+      - valgrind
+      - powertop
+      - iotop
+      - mesa-utils
+      - tmux
+      - rdiff-backup
+      - rsync
+      - anki
+      - docker.io
+      - docker-compose
+      - vim-syntax-docker
+      - clang
+      - xmonad
+      - trayer
+      - suckless-tools
+      - xmobar
+      - xournal
+      - evince
+      - virtualenvwrapper
+      - rhythmbox
+      - dia
+      - prey
+      - youtube-dl
+      - thunar-dropbox-plugin
+      - evince
+      - vlc
+      - arandr
+      - sc
+      - sshfs
+      - simple-scan
+      - swig
+      - mc
+      - exuberant-ctags
+      - ccache
+      - preload
+      - bmon
+      - vnstat
+      - nethogs
+      
+
+# packages not available
+# apt-fast
+# skype
+# firebird
