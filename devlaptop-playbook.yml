@@ -52,6 +52,7 @@
       - vnstat
       - nethogs
       - kwin-common
+      - ecryptfs-utils
       
 
 # packages not available
