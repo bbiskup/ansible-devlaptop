@@ -1,0 +1,27 @@
+# Manual steps; to be automated:
+## misc
+- add user bb to group docker
+- set keyboard to euro...?? (with umlauts; only in kde?!?
+- download and install crashplan
+- download and install dropbox
+
+## tipp10
+- apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+- apt-get install libsm6:i386
+- apt-get install libxi:i386
+- apt-get install libxrender1:i386
+- apt-get install libxrander2:i386
+- apt-get install libxfixes3:i386
+- apt-get install libxcursori1:i386
+- apt-get install libxinerama1:i386
+- apt-get install libfreetype6:i386
+- apt-get install libfontconfig1:i386
+- apt-get install libglib2.0.0:i386
+... works!
+
+
+# Touchpad palm detection
+
+add to /etc/modprobe.d/blacklist.conf
+blacklist i2c_designware-platform  
+

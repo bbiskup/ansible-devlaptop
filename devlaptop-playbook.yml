@@ -1,5 +1,16 @@
 - hosts: devlaptops
   tasks:
+  - name: remove conflicting packages
+    sudo: yes
+    apt:
+      name: "{{item}}"
+      state: absent
+    with_items:
+      - account-plugin-google
+      - unity-scope-gdriv
+
+- hosts: devlaptops
+  tasks:
   - name: install packages
     sudo: yes
     apt:
@@ -51,11 +62,31 @@
       - bmon
       - vnstat
       - nethogs
-      - kwin-common
       - ecryptfs-utils
+      # for prey
+      - scrot
+      - mpg123
+      - giblib1
+      - libimlib2
+      - libid3tag0
+      - libgif7
+      - tig
+      - gt5
+      - baobab
+      - checkinstall
+      - psensor
+      - pavucontrol
+      - wicd-curses
+      - kubuntu-desktop
+      - kde-config-telepathy-accounts
       
 
-# packages not available
-# apt-fast
-# skype
-# firebird
+      # packages not available
+      # apt-fast
+      # skype
+      # firebird
+
+        #  - user
+        # name: bb
+        #      groups: docker
+        # append: yes
