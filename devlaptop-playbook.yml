@@ -79,6 +79,7 @@
       - wicd-curses
       - kubuntu-desktop
       - kde-config-telepathy-accounts
+      - thunderbird
       
 
       # packages not available
@@ -95,3 +96,9 @@
   - name: Kde & xmonad | Make xmonad window manager for KDE
     template: src=templates/xmonad/set_window_manager.sh.j2 dest=/home/bb/.config/plasma-workspace/set_window_manager.sh
 
+  - name: Fix touch pad palm detection (might not work correctly
+    sudo: yes
+    lineinfile: 
+        destfile: /etc/modprobe.d/blacklist.conf 
+        regexp: "^blacklist i2c_designware-platform"
+        line: blacklist i2c_designware-platform
