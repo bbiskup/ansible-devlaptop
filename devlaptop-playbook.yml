@@ -90,3 +90,8 @@
         # name: bb
         #      groups: docker
         # append: yes
+  - name: Plasma conf dir  | ensure dir exists
+    file: path=/home/bb/.config/plasma-workspace/ state=directory
+  - name: Kde & xmonad | Make xmonad window manager for KDE
+    template: src=templates/xmonad/set_window_manager.sh.j2 dest=/home/bb/.config/plasma-workspace/set_window_manager.sh
+
