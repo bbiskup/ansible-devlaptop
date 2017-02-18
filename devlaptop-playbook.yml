@@ -97,8 +97,36 @@
     template: src=templates/xmonad/set_window_manager.sh.j2 dest=/home/bb/.config/plasma-workspace/set_window_manager.sh
 
   - name: Fix touch pad palm detection (might not work correctly
+    # http://seb.mamessier.com/dell-xps-15-9550-ubuntu-16-04/
     sudo: yes
     lineinfile: 
         destfile: /etc/modprobe.d/blacklist.conf 
         regexp: "^blacklist i2c_designware-platform"
         line: blacklist i2c_designware-platform
+
+  - name: Add nvidia repo
+    apt_repository:
+        repo: 'ppa:graphics-drivers/ppa'
+
+  - name: Install nvidia drivers
+    # requires switching off UEFI
+    # causing ansible playbook to hang
+    apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+    with_items:
+        - nvidia-375
+        - nvidia-prime
+
+  - name: Add repo for nvidia prime indicator
+    apt_repository:
+        repo: 'ppa:nilarimogard/webupd8'
+
+  - name: Install nvidia prime indicator 
+    apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+    with_items:
+        - prime-indicator
