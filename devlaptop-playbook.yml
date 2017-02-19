@@ -80,7 +80,11 @@
       - kubuntu-desktop
       - kde-config-telepathy-accounts
       - thunderbird
-      
+      - nexuiz
+      - playonlinux
+      - ipython  
+      - volti
+      - feh
 
       # packages not available
       # apt-fast
@@ -108,25 +112,25 @@
     apt_repository:
         repo: 'ppa:graphics-drivers/ppa'
 
-  - name: Install nvidia drivers
-    # requires switching off UEFI
-    # causing ansible playbook to hang
-    apt:
-        name: "{{item}}"
-        state: present
-        update_cache: yes
-    with_items:
-        - nvidia-375
-        - nvidia-prime
+#   - name: Install nvidia drivers
+#     # requires switching off UEFI
+#     # causing ansible playbook to hang
+#     apt:
+#         name: "{{item}}"
+#         state: present
+#         update_cache: yes
+#     with_items:
+#         - nvidia-375
+#         - nvidia-prime
+# 
+#   - name: Add repo for nvidia prime indicator
+#     apt_repository:
+#         repo: 'ppa:nilarimogard/webupd8'
 
-  - name: Add repo for nvidia prime indicator
-    apt_repository:
-        repo: 'ppa:nilarimogard/webupd8'
-
-  - name: Install nvidia prime indicator 
-    apt:
-        name: "{{item}}"
-        state: present
-        update_cache: yes
-    with_items:
-        - prime-indicator
+    #   - name: Install nvidia prime indicator 
+    #     apt:
+    #    name: "{{item}}"
+    #    state: present
+    #    update_cache: yes
+    #     with_items:
+    #   - prime-indicator
