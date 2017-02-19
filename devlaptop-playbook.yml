@@ -9,8 +9,14 @@
       - account-plugin-google
       - unity-scope-gdriv
 
+
 - hosts: devlaptops
   tasks:
+  - name: Add Canonical partner repo (for skype etc.)
+    sudo: yes
+    apt_repository:
+      repo: deb http://archive.canonical.com/ubuntu xenial partner
+      state: present
   - name: install packages
     sudo: yes
     apt:
@@ -85,6 +91,7 @@
       - ipython  
       - volti
       - feh
+      - lm-sensors
 
       # packages not available
       # apt-fast
