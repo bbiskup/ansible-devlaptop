@@ -17,6 +17,11 @@
     apt_repository:
       repo: deb http://archive.canonical.com/ubuntu xenial partner
       state: present
+  - name: Add apt-fast repository
+    sudo: yes
+    apt_repository:
+      repo: 'ppa:saiarcot895/myppa'
+      state: present
   - name: install packages
     sudo: yes
     apt:
@@ -94,6 +99,7 @@
       - feh
       - lm-sensors
       - skype
+      - apt-fast
 
       # packages not available
       # apt-fast
