@@ -1,0 +1,135 @@
+" 20170204 bb
+"
+
+" Vundle ---->
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'https://github.com/kien/ctrlp.vim.git'
+
+
+
+all vundle#end()            " required
+filetype plugin indent on 
+
+" <----- end of Vundle config
+"
+
+" show commands in status bar
+set showcmd
+
+" no beep
+set visualbell
+
+" line numbers
+set number
+
+" highlight search results
+set hlsearch
+
+" disable cursor keys (to get used to hjkl)
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" noremap h <NOP>
+" noremap j <NOP>
+" noremap k <NOP>
+" noremap l <NOP>
+
+
+" spaces for tabs (http://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim)
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+
+" ------ NERDTree
+" install nerdtree
+" apt-vim install -y https://github.com/scrooloose/nerdtree.git
+" launch NERDTree at start
+" autocmd vimenter * NERDTree
+" Key mapping for NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" ctrl-p
+" install plugin
+"   apt-vim install -y https://github.com/kien/ctrlp.vim.git
+
+
+" ------- ag.vim (deprecated) --> ack.vim
+" install plugin
+"  apt-vim install -y https://github.com/mileszs/ack.vim.git 
+" Use ag instead of ack, if available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" ------- cim-cpp-enhanced-highlight
+" install plugin
+"   apt-vim install -y https://github.com/octol/vim-cpp-enhanced-highlight.git
+
+
+" ------- vim-clang-format
+" install plugin
+"   apt-vim install -y https://github.com/rhysd/vim-clang-format.git
+" set custom executable
+let g:clang_format#command = 'clang-format-3.7'
+" automatic formatting
+let g:clang_format#auto_format = 1
+
+" -------- YouCompleteMe
+" Installation steps: see https://github.com/Valloric/YouCompleteMe
+" install ycmd (YouComplete) engine
+"   sudo apt-get install ycmd
+"   sudo apt-get install build-essential cmake
+"   sudo apt-get install python-dev python3-dev
+"   cd ~/.vim/bundle/YouCompleteMe
+"   git submodule update --init --recursive
+"   ./install.py --clang-completer
+"   
+" install plugin
+" install plugin
+"   apt-vim install -y https://github.com/Valloric/YouCompleteMe.git
+
+" ---------------------------------------------------------
+" Misc. key mappings
+
+" ---------------------------------------------------------
+" Color scheme
+" install
+" apt-vim install -y https://github.com/fneu/breezy.git
+"set background=dark
+""set termguicolors " if you want to run vim in a terminal
+colorscheme breezy
+
+" apt-vim install -y https://github.com/jansenfuller/crayon.git
+"colorscheme crayon
+" show invisible characters with backslash-l
+" (http://vimcasts.org/episodes/show-invisibles/)
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+"Invisible character colors 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" vim-colors-solarized
+syntax enable
+"set background=dark
+set background=light
+colorscheme solarized
+
