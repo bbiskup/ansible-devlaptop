@@ -168,5 +168,5 @@
 #        dest: ~/.vim/bundle/ctrlp.vim
 
   - name: Install vim plugins with vundle
-    shell: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
+    shell: vim +PluginInstall +qall 2&>/dev/null
 
