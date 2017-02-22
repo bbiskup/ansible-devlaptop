@@ -100,20 +100,21 @@
       - lm-sensors
       - skype
       - apt-fast
+      - i3status
 
       # packages not available
       # apt-fast
       # skype
       # firebird
 
-        #  - user
+# #         #  - user
         # name: bb
         #      groups: docker
         # append: yes
   - name: Plasma conf dir  | ensure dir exists
-    file: path=/home/bb/.config/plasma-workspace/ state=directory
+    file: path=~/.config/plasma-workspace/ state=directory
   - name: Kde & xmonad | Make xmonad window manager for KDE
-    template: src=templates/xmonad/set_window_manager.sh.j2 dest=/home/bb/.config/plasma-workspace/set_window_manager.sh
+    template: src=templates/xmonad/set_window_manager.sh.j2 dest=~/.config/plasma-workspace/set_window_manager.sh
 
   - name: Fix touch pad palm detection (might not work correctly
     # http://seb.mamessier.com/dell-xps-15-9550-ubuntu-16-04/
@@ -149,3 +150,23 @@
     #    update_cache: yes
     #     with_items:
     #   - prime-indicator
+    #
+
+  - name: Install .vimrc file
+    template:
+        src: templates/vimrc.j2
+        dest: ~/.vimrc
+  - name: vim bundle dir  | ensure dir exists
+    file: path=~/.vim/bundle state=directory
+  - name: Install vundle (vim plugin manager)
+    git:
+        repo: https://github.com/VundleVim/Vundle.vim.git
+        dest: ~/.vim/bundle/Vundle.vim 
+#  - name: install vim ctrl-p plugin
+#    git:
+#        repo: https://github.com/kien/ctrlp.vim.git
+#        dest: ~/.vim/bundle/ctrlp.vim
+
+  - name: Install vim plugins with vundle
+    shell: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
+

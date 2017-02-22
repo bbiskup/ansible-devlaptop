@@ -13,10 +13,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/kien/ctrlp.vim.git'
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 
 
 
-all vundle#end()            " required
+call vundle#end()            " required
 filetype plugin indent on 
 
 " <----- end of Vundle config
@@ -113,7 +114,7 @@ let g:clang_format#auto_format = 1
 " apt-vim install -y https://github.com/fneu/breezy.git
 "set background=dark
 ""set termguicolors " if you want to run vim in a terminal
-colorscheme breezy
+" colorscheme breezy
 
 " apt-vim install -y https://github.com/jansenfuller/crayon.git
 "colorscheme crayon
@@ -129,7 +130,7 @@ highlight SpecialKey guifg=#4a4a59
 
 " vim-colors-solarized
 syntax enable
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 colorscheme solarized
 
