@@ -54,6 +54,7 @@
       - docker.io
       - docker-compose
       - vim-syntax-docker
+      - cmake
       - clang
       - xmonad
       - trayer
@@ -181,3 +182,7 @@
   - name: Install vim plugins with vundle
     shell: vim +PluginInstall +qall 2&>/dev/null
 
+  - name: Install vim plugin YouCompleteMe
+    shell: ./install.py --clang-completer
+    args:
+        chdir: '~/.vim/bundle/YouCompleteMe'
