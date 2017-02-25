@@ -35,6 +35,7 @@
     with_items:
       - tree
       - htop
+      - ack-grep
       - python-dev
       - python3-dev
       - vim

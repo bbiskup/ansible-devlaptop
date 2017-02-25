@@ -18,6 +18,10 @@ Plugin 'https://github.com/rhysd/vim-clang-format.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/mileszs/ack.vim.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'tpope/vim-fugitive'
+"powerline: too many dependencies
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 
 
 
@@ -26,6 +30,9 @@ filetype plugin indent on
 
 " <----- end of Vundle config
 "
+
+" System clipboard
+set clipboard=unnamed
 
 " show commands in status bar
 set showcmd
@@ -96,18 +103,15 @@ let g:clang_format#command = 'clang-format-3.7'
 let g:clang_format#auto_format = 1
 
 " -------- YouCompleteMe
-" Installation steps: see https://github.com/Valloric/YouCompleteMe
-" install ycmd (YouComplete) engine
-"   sudo apt-get install ycmd
-"   sudo apt-get install build-essential cmake
-"   sudo apt-get install python-dev python3-dev
-"   cd ~/.vim/bundle/YouCompleteMe
-"   git submodule update --init --recursive
-"   ./install.py --clang-completer
-"   
-" install plugin
-" install plugin
-"   apt-vim install -y https://github.com/Valloric/YouCompleteMe.git
+"YouCompleteMe: python with virtualenv support
+"py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"   project_base_dir = os.environ['VIRTUAL_ENV']
+"     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"       execfile(activate_this, dict(__file__=activate_this))
+"       EOF
 
 " ---------------------------------------------------------
 " Misc. key mappings
