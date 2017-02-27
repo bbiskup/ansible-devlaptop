@@ -115,6 +115,7 @@
       - build-essential
       - xbacklight
 
+
       # packages not available
       # apt-fast
       # skype
@@ -139,7 +140,31 @@
         regexp: "^blacklist i2c_designware-platform"
         line: blacklist i2c_designware-platform
 
+  - name: Add Samsung Universal printer driver repo
+    sudo: yes
+    apt_repository:
+        repo: deb http://www.bchemnet.com/suldr/ debian extra
+
+  - name: Fetch and install keyring for Samsung Universal Printer repo
+    sudo: yes
+    shell: |
+        wget http://www.bchemnet.com/suldr/pool/debian/extra/su/suldr-keyring_2_all.deb
+        dpkg -i suldr-keyring_2_all.deb
+        rm suldr-keyring_2_all.deb
+
+  - name: Install Samsung Universal printer driver
+    sudo: yes
+    apt:
+      name: "{{item}}"
+      state: present
+      update_cache: yes
+    with_items:
+        - suld-driver-4.00.39
+        - suld-configurator-2-qt4
+
+
   - name: Add nvidia repo
+    sudo: yes
     apt_repository:
         repo: 'ppa:graphics-drivers/ppa'
 
@@ -187,3 +212,4 @@
     shell: ./install.py --clang-completer
     args:
         chdir: '~/.vim/bundle/YouCompleteMe'
+
