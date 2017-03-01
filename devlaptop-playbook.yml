@@ -114,10 +114,11 @@
       - ycmd
       - build-essential
       - xbacklight
+      - traceroute
 
       # VPN (20160301 - VPN crashes with double free error if .ike/sites/xxx not found)
       - ike
-      ' - ike-qtgui
+      # - ike-qtgui
 
       # ike build dependencies
       # - libssl-dev
