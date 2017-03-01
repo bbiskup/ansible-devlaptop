@@ -115,6 +115,16 @@
       - build-essential
       - xbacklight
 
+      # VPN (20160301 - VPN crashes with double free error if .ike/sites/xxx not found)
+      - ike
+      ' - ike-qtgui
+
+      # ike build dependencies
+      # - libssl-dev
+      # - libedit-dev
+      # - flex
+      # - bison
+
 
       # packages not available
       # apt-fast
