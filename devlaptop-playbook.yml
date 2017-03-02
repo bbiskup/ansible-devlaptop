@@ -37,6 +37,7 @@
       - htop
       - ack-grep
       - python-dev
+      - python-pip
       - python3-dev
       - vim
       - git
@@ -53,7 +54,8 @@
       - rsync
       - anki
       - docker.io
-      - docker-compose
+      # TOO OLD: 1.5.2
+      # - docker-compose
       - vim-syntax-docker
       - cmake
       - clang
@@ -98,8 +100,8 @@
       - psensor
       - pavucontrol
       - wicd-curses
-      - kubuntu-desktop
-      - kde-config-telepathy-accounts
+        # - kubuntu-desktop
+      # - kde-config-telepathy-accounts
       - thunderbird
       - nexuiz
       - playonlinux
@@ -156,8 +158,17 @@
       - netbase
       - net-tools
       - bzip2
+      - mercurial
 
+      ## for swig
+      - libpcre3-dev
 
+      
+      ######## actually, should use fractal/scripts/setup_ubuntu_16.sh
+      ## For building fractal repo
+      - libgoogle-perftools-dev
+      - texlive-latex-base
+      - texlive-fonts-recommended
 
       # VPN (20160301 - VPN crashes with double free error if .ike/sites/xxx not found)
       - ike
@@ -179,6 +190,14 @@
         # name: bb
         #      groups: docker
         # append: yes
+
+
+  # We need support for syntax >= 2 
+  - name: Install docker-compose
+    sudo: yes
+    shell: |
+        curl -L https://github.com/docker/compose/releases/download/1.11.1/run.sh > /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
 
   - name: Plasma conf dir  | ensure dir exists
     file: path=~/.config/plasma-workspace/ state=directory
