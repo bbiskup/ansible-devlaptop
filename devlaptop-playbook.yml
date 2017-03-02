@@ -34,6 +34,7 @@
       state: present
     with_items:
       - tree
+      - resolvconf
       - htop
       - ack-grep
       - python-dev
