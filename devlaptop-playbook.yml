@@ -34,6 +34,7 @@
       state: present
     with_items:
       - tree
+      - silversearcher-ag
       - resolvconf
       - rdiff-backup
       - htop
@@ -288,3 +289,7 @@
     args:
         chdir: '~/.vim/bundle/YouCompleteMe'
 
+
+###### misc stuff to add to Ansible scripts:
+# ~/.gitconfig
+#
