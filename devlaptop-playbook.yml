@@ -35,6 +35,7 @@
     with_items:
       - tree
       - resolvconf
+      - rdiff-backup
       - htop
       - ack-grep
       - python-dev
