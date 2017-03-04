@@ -14,18 +14,21 @@
   apt_repository:
     repo: deb http://archive.canonical.com/ubuntu xenial partner
     state: present
+  notify:
+    -  Update APT cache
 
 - name: Add apt-fast repository
   sudo: yes
   apt_repository:
     repo: 'ppa:saiarcot895/myppa'
     state: present
+  notify:
+    -  Update APT cache
 
 - name: install packages
   sudo: yes
   apt:
     name: "{{item}}"
-    update_cache: yes
     state: present
   with_items:
     - tree
@@ -225,6 +228,7 @@
   apt_repository:
       repo: deb http://www.bchemnet.com/suldr/ debian extra
   notify:
+    -  Update APT cache
     - Install Samsung Universal printer driver 
 
 

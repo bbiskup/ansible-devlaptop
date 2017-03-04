@@ -22,5 +22,5 @@
   args:
     chdir: '~/.vim/bundle/YouCompleteMe'
 
-- name: DUMMYHANDLER
-  shell: echo DUMMY!!!
+- name: Update APT cache
+  shell: apt-get update
