@@ -115,6 +115,8 @@
       - skype
       - apt-fast
       - i3status
+      - i3lock
+      - xautolock
       # YouCompleteMe vim plugin
       - ycmd
       - build-essential
