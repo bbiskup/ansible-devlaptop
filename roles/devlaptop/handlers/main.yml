@@ -21,3 +21,6 @@
   shell: ./install.py --clang-completer
   args:
     chdir: '~/.vim/bundle/YouCompleteMe'
+
+- name: DUMMYHANDLER
+  shell: echo DUMMY!!!

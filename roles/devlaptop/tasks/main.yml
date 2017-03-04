@@ -213,6 +213,13 @@
       regexp: "^blacklist i2c_designware-platform"
       line: blacklist i2c_designware-platform
 
+- name: Fetch and install keyring for Samsung Universal Printer repo
+  get_url:
+    url: http://www.bchemnet.com/suldr/pool/debian/extra/su/suldr-keyring_2_all.deb
+    dest: /tmp/suldr-keyring_2_all.deb
+  notify:
+    - Install Samsung Universal printer driver
+
 - name: Add Samsung Universal printer driver repo
   sudo: yes
   apt_repository:
@@ -220,19 +227,11 @@
   notify:
     - Install Samsung Universal printer driver 
 
-- name: Fetch and install keyring for Samsung Universal Printer repo
-  sudo: yes
-  shell: |
-      wget http://www.bchemnet.com/suldr/pool/debian/extra/su/suldr-keyring_2_all.deb
-      dpkg -i suldr-keyring_2_all.deb
-      rm suldr-keyring_2_all.deb
 
-
-
-- name: Add nvidia repo
-  sudo: yes
-  apt_repository:
-      repo: 'ppa:graphics-drivers/ppa'
+# - name: Add nvidia repo
+#  sudo: yes
+#  apt_repository:
+#      repo: 'ppa:graphics-drivers/ppa'
 
 #   - name: Install nvidia drivers
 #     # requires switching off UEFI
