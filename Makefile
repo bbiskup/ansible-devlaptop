@@ -5,5 +5,5 @@ run-playbook:
 	ansible-playbook -vv  -i hosts -K devlaptop-playbook.yml
 
 run-playbook-new:
-		ansible-playbook -vv  -i hosts -K devlaptop-playbook-new.yml
+		ansible-playbook   -i hosts -K devlaptop-playbook-new.yml
 
