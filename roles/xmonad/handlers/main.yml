@@ -1,0 +1,6 @@
+---
+- name: recompile xmonad
+  shell: xmonad --recompile
+  args:
+    chdir: ~/.xmonad
+

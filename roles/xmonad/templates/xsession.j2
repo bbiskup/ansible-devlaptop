@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+# EurKey keyboard (US + umlauts etc.)
+setxkbmap eu
+
+
+# disable touchpad while typing (does this work?)
+# https://ubuntuforums.org/showthread.php?t=2317843
+/usr/bin/syndaemon -i 1 -K -d &
+
+(sleep 3; dropbox stop;  dbus-launch dropbox start) &
+
+nm-applet&
+volti &
+#feh --bg-fill privat/bilder2/Hintergrundbilder/yaara-orig.jpg
+
+
+pkill -u $USER ssh-agent
+eval $(ssh-agent)
+#ssh-add
+
+
+xautolock -time 15 -notify 15 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 15 seconds'" -locker slock -corners -000 &
+
+
+# xmobar&
+(i3status | xmobar -o -t "%StdinReader%" -c "[Run StdinReader]") &
+
+
+trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x000000 --height 20 &
+$HOME/.xmonad/xmonad
+
+
+
+
