@@ -1,5 +1,14 @@
 ---
-
-
 - name: Update APT cache
+  sudo: yes
   shell: apt-get update
+
+- name: Install Samsung Universal printer driver
+  sudo: yes
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items:
+      - suld-driver-4.00.39
+      - suld-configurator-2-qt4

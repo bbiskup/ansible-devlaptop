@@ -118,13 +118,15 @@
     # skype
     # firebird
 
+- name: Fetch and install keyring for Samsung Universal Printer repo
+  get_url:
+    url: http://www.bchemnet.com/suldr/pool/debian/extra/su/suldr-keyring_2_all.deb
+    dest: /tmp/suldr-keyring_2_all.deb
 
-- name: Install Samsung Universal printer driver
+- name: Add Samsung Universal printer driver repo
   sudo: yes
-  apt:
-    name: "{{item}}"
-    state: present
-    update_cache: yes
-  with_items:
-      - suld-driver-4.00.39
-      - suld-configurator-2-qt4
+  apt_repository:
+      repo: deb http://www.bchemnet.com/suldr/ debian extra
+  notify:
+    -  Update APT cache
+    - Install Samsung Universal printer driver 
