@@ -9,9 +9,7 @@ main = xmonad defaultConfig
         { layoutHook = avoidStruts $ layoutHook defaultConfig,
         manageHook = manageDocks <+> manageHook defaultConfig,
         keys          = \c -> mykeys c `M.union` keys defaultConfig c,
-        -- terminal = "lxterminal"
         terminal = "gnome-terminal"
-        -- more changes
         }
     where
         mykeys (XConfig {modMask = modm}) = M.fromList $
@@ -19,14 +17,11 @@ main = xmonad defaultConfig
                  ((modm , xK_F1), spawn "/home/bb/.screenlayout/home-dell-samsung-vga.sh"),
                  ((modm , xK_F2), spawn "/home/bb/.screenlayout/dell-only-laptop-screen.sh"),
                  ((modm , xK_F3), spawn "/home/bb/.screenlayout/fractal-dell-philips.sh"),
-                 -- ((modm , xK_F5), spawn "lxterminal -e ssh -X bb@192.168.56.101"), -- ubuntu dev
                  --((modm , xK_F5), spawn "lxterminal -e ssh -i /home/bb/.ssh/id_rsa -X root@192.168.56.102"), -- Debian e2e
                  -- ((modm , xK_F6), spawn "lxterminal -e ssh -X bb@bs"),
 
                  ((modm , xK_F7), spawn "eject -t /dev/sr0"),
                  ((modm , xK_F8), spawn "eject /dev/sr0"),
-                -- ((modm , xK_F10), spawn "lxterminal -e ssh -X bb@192.168.56.101"), -- Debian dev
-                -- ((modm , xK_F11), spawn "lxterminal -e ssh -X root@192.168.56.105"), -- Debian CLEANSTATE
                 ((modm , xK_F11), spawn "slock"),
                 ((modm , xK_F12), spawn "slock sudo pm-suspend"),
 

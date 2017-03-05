@@ -3,5 +3,5 @@
     - all
   roles:
     # edit to specify desired role
-    - vim
+    - xmonad
 
