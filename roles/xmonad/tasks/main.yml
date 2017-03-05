@@ -1,5 +1,13 @@
 ---
 
+- name: Add TouchPad indicator repo
+  sudo: yes
+  apt_repository:
+    repo: 'ppa:atareao/atareao'
+    state: present
+  notify:
+    -  Update APT cache
+
 - name: install packages for xmonad
   sudo: yes
   apt:
@@ -18,6 +26,7 @@
     - i3lock
     - xautolock
     - xbacklight
+    - touchpad-indicator
 
 
 - name: .xmonad dir
@@ -28,10 +37,16 @@
   notify:
     - recompile xmonad
 
-- name: Install TouchPad toggle script
-  template: src=templates/scripts/touchpad-toggle.sh.j2 dest=~/.xmonad/scripts/touchpad-toggle.sh
-  args: 
-      mode: u+x
+  #- name: Install TouchPad toggle script
+  #template: src=templates/scripts/touchpad-toggle.sh.j2 dest=~/.xmonad/scripts/touchpad-toggle.sh
+  #args: 
+  #    mode: u+x
+ 
+- name: Create touchpad-indicator config dir
+  file: path=~/.config/touchpad-indicator state=directory
 
-- name: .xsesion file
+- name: Install touchpad-indicator config
+  template: src=templates/touchpad-indicator.conf.j2 dest=~/.config/touchpad-indicator/touchpad-indicator.conf
+
+- name: .xsession file
   template: src=templates/xsession.j2 dest=~/.xsession

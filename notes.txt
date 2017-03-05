@@ -1,7 +1,6 @@
 # Manual steps; to be automated:
 ## misc
 - add user bb to group docker
-- set keyboard to euro...?? (with umlauts; only in kde?!?
 - download and install crashplan
 - download and install dropbox
 
@@ -20,8 +19,4 @@
 ... works!
 
 
-# Touchpad palm detection
-
-add to /etc/modprobe.d/blacklist.conf
-blacklist i2c_designware-platform  
 
