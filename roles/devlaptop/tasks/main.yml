@@ -198,9 +198,10 @@
 # We need support for syntax >= 2 
 - name: Install docker-compose
   sudo: yes
-  shell: |
-      curl -L https://github.com/docker/compose/releases/download/1.11.1/run.sh > /usr/local/bin/docker-compose
-      chmod +x /usr/local/bin/docker-compose
+  get_url: 
+      url: https://github.com/docker/compose/releases/download/1.11.1/run.sh
+      dest: /usr/local/bin/docker-compose
+      mode: ugo+x
 
 - name: Plasma conf dir  | ensure dir exists
   file: path=~/.config/plasma-workspace/ state=directory
