@@ -2,4 +2,9 @@
 - hosts:
     - devlaptops
   roles:
-    - devlaptop
+    - common
+    - docker
+    - vim
+    - xmonad
+    - dell_xps_15
+

@@ -1,0 +1,18 @@
+---
+
+- name: install packages for docker
+  sudo: yes
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - docker.io
+
+
+# We need support for syntax >= 2 
+- name: Install docker-compose
+  sudo: yes
+  get_url: 
+      url: https://github.com/docker/compose/releases/download/1.11.1/run.sh
+      dest: /usr/local/bin/docker-compose
+      mode: ugo+x

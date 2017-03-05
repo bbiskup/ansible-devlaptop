@@ -1,29 +1,4 @@
-
-- name: remove conflicting packages
-  sudo: yes
-  apt:
-    name: "{{item}}"
-    state: absent
-  with_items:
-    - account-plugin-google
-    - unity-scope-gdriv
-
-
-- name: Add Canonical partner repo (for skype etc.)
-  sudo: yes
-  apt_repository:
-    repo: deb http://archive.canonical.com/ubuntu xenial partner
-    state: present
-  notify:
-    -  Update APT cache
-
-- name: Add apt-fast repository
-  sudo: yes
-  apt_repository:
-    repo: 'ppa:saiarcot895/myppa'
-    state: present
-  notify:
-    -  Update APT cache
+---
 
 - name: install packages
   sudo: yes
@@ -195,13 +170,6 @@
       # append: yes
 
 
-# We need support for syntax >= 2 
-- name: Install docker-compose
-  sudo: yes
-  get_url: 
-      url: https://github.com/docker/compose/releases/download/1.11.1/run.sh
-      dest: /usr/local/bin/docker-compose
-      mode: ugo+x
 
 - name: Plasma conf dir  | ensure dir exists
   file: path=~/.config/plasma-workspace/ state=directory

@@ -1,0 +1,13 @@
+---
+
+- name: Install .vimrc file
+  template:
+      src: templates/vimrc.j2
+      dest: ~/.vimrc
+
+- name: vim bundle dir  | ensure dir exists
+  file: path=~/.vim/bundle state=directory
+  notify:
+  - Install vundle
+  - Install vim plugins with vundle
+  - Install vim plugin YouCompleteMe

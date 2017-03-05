@@ -1,0 +1,130 @@
+---
+- name: remove conflicting packages
+  sudo: yes
+  apt:
+    name: "{{item}}"
+    state: absent
+  with_items:
+    - account-plugin-google
+    - unity-scope-gdriv
+
+
+- name: Add Canonical partner repo (for skype etc.)
+  sudo: yes
+  apt_repository:
+    repo: deb http://archive.canonical.com/ubuntu xenial partner
+    state: present
+  notify:
+    -  Update APT cache
+
+- name: Add apt-fast repository
+  sudo: yes
+  apt_repository:
+    repo: 'ppa:saiarcot895/myppa'
+    state: present
+  notify:
+    -  Update APT cache
+
+
+- name: install common packages
+  sudo: yes
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - tree
+    - silversearcher-ag
+    - rdiff-backup
+    - htop
+    - ack-grep
+    - python-dev
+    - python-pip
+    - python3-dev
+    - vim
+    - git
+    - gcalcli
+    - virtualbox
+    - lynx
+    - vagrant
+    - valgrind
+    - powertop
+    - iotop
+    - mesa-utils
+    - tmux
+    - rdiff-backup
+    - rsync
+    - anki
+    - vim-syntax-docker
+    - cmake
+    - clang
+    - xournal
+    - evince
+    - virtualenvwrapper
+    - rhythmbox
+    - dia
+    - prey
+    - youtube-dl
+    - thunar-dropbox-plugin
+    - evince
+    - vlc
+    - arandr
+    - sc
+    - sshfs
+    - simple-scan
+    - swig
+    - mc
+    - exuberant-ctags
+    - ccache
+    - preload
+    - bmon
+    - vnstat
+    - nethogs
+    - ecryptfs-utils
+    # for prey
+    - scrot
+    - mpg123
+    - giblib1
+    - libimlib2
+    - libid3tag0
+    - libgif7
+    - tig
+    - gt5
+    - baobab
+    - checkinstall
+    - psensor
+    - pavucontrol
+      # - wicd-curses
+      # - kubuntu-desktop
+    # - kde-config-telepathy-accounts
+    - thunderbird
+    - playonlinux
+    - ipython  
+    - volti
+    - feh
+    - lm-sensors
+    - skype
+    - apt-fast
+    - i3status
+    - i3lock
+    - xautolock
+    # YouCompleteMe vim plugin
+    - ycmd
+    - build-essential
+    - xbacklight
+    - traceroute
+
+    # packages not available
+    # apt-fast
+    # skype
+    # firebird
+
+
+- name: Install Samsung Universal printer driver
+  sudo: yes
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items:
+      - suld-driver-4.00.39
+      - suld-configurator-2-qt4

@@ -1,0 +1,24 @@
+---
+
+- name: install packages for xmonad
+  sudo: yes
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - xmonad
+    - trayer
+    - suckless-tools
+    - xmobar
+    - xournal
+    - vlc
+    - volti
+    - feh
+    - i3status
+    - i3lock
+    - xautolock
+    - xbacklight
+
+- name: Kde & xmonad | Make xmonad window manager for KDE
+  template: src=templates/xmonad/set_window_manager.sh.j2 dest=~/.config/plasma-workspace/set_window_manager.sh
+

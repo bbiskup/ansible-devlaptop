@@ -1,0 +1,5 @@
+---
+
+
+- name: Update APT cache
+  shell: apt-get update

@@ -1,0 +1,9 @@
+---
+
+- name: Fix touch pad palm detection (might not work correctly
+  # http://seb.mamessier.com/dell-xps-15-9550-ubuntu-16-04/
+  sudo: yes
+  lineinfile: 
+      destfile: /etc/modprobe.d/blacklist.conf 
+      regexp: "^blacklist i2c_designware-platform"
+      line: blacklist i2c_designware-platform
