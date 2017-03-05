@@ -19,16 +19,17 @@
     - xautolock
     - xbacklight
 
-- name: Kde & xmonad | Make xmonad window manager for KDE
-  template: src=templates/set_window_manager.sh.j2 dest=~/.config/plasma-workspace/set_window_manager.sh
 
 - name: .xmonad dir
-  file: path=~/.xmonad state=directory
+  file: path=~/.xmonad/scripts state=directory
 
 - name: xmonad.hs (xmonad config file)
   template: src=templates/xmonad.hs.j2 dest=~/.xmonad/xmonad.hs
   notify:
     - recompile xmonad
+
+- name: Install TouchPad toggle script
+  template: src=templates/scripts/touchpad-toggle.sh.j2 dest=~/.xmonad/scripts/touchpad-toggle.sh
 
 - name: .xsesion file
   template: src=templates/xsession.j2 dest=~/.xsession

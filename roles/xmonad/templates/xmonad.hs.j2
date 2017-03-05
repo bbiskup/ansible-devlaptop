@@ -22,6 +22,9 @@ main = xmonad defaultConfig
 
                  ((modm , xK_F7), spawn "eject -t /dev/sr0"),
                  ((modm , xK_F8), spawn "eject /dev/sr0"),
+
+                ((modm , xK_F9), spawn "~/.xmonad/scripts/touchpad-toggle.sh"),
+
                 ((modm , xK_F11), spawn "slock"),
                 ((modm , xK_F12), spawn "slock sudo pm-suspend"),
 
