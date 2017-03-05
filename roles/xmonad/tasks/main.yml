@@ -30,6 +30,8 @@
 
 - name: Install TouchPad toggle script
   template: src=templates/scripts/touchpad-toggle.sh.j2 dest=~/.xmonad/scripts/touchpad-toggle.sh
+  args: 
+      mode: u+x
 
 - name: .xsesion file
   template: src=templates/xsession.j2 dest=~/.xsession
