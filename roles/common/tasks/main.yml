@@ -25,6 +25,13 @@
   notify:
     -  Update APT cache
 
+- name: Add TouchPad indicator repo
+  sudo: yes
+  apt_repository:
+    repo: 'ppa:atareao/atareao'
+    state: present
+  notify:
+    -  Update APT cache
 
 - name: install common packages
   sudo: yes
@@ -34,6 +41,7 @@
   with_items:
     - tree
     - silversearcher-ag
+    - touchpad-indicator
     - rdiff-backup
     - htop
     - ack-grep

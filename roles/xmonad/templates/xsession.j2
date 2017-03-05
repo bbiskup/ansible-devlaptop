@@ -22,7 +22,8 @@ eval $(ssh-agent)
 
 
 xautolock -time 15 -notify 15 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 15 seconds'" -locker slock -corners -000 &
-
+ 
+/opt/extras.ubuntu.com/touchpad-indicator/bin/touchpad-indicator &
 
 # xmobar&
 (i3status | xmobar -o -t "%StdinReader%" -c "[Run StdinReader]") &
