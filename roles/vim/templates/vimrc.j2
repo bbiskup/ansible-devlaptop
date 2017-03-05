@@ -75,34 +75,22 @@ set expandtab
 
 
 " ------ NERDTree
-" install nerdtree
-" apt-vim install -y https://github.com/scrooloose/nerdtree.git
 " launch NERDTree at start
 " autocmd vimenter * NERDTree
 " Key mapping for NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" ctrl-p
-" install plugin
-"   apt-vim install -y https://github.com/kien/ctrlp.vim.git
-
 
 " ------- ag.vim (deprecated) --> ack.vim
-" install plugin
-"  apt-vim install -y https://github.com/mileszs/ack.vim.git 
 " Use ag instead of ack, if available
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
 " ------- cim-cpp-enhanced-highlight
-" install plugin
-"   apt-vim install -y https://github.com/octol/vim-cpp-enhanced-highlight.git
 
 
 " ------- vim-clang-format
-" install plugin
-"   apt-vim install -y https://github.com/rhysd/vim-clang-format.git
 " set custom executable
 let g:clang_format#command = 'clang-format-3.7'
 " automatic formatting
@@ -122,17 +110,6 @@ let g:clang_format#auto_format = 1
 " ---------------------------------------------------------
 " Misc. key mappings
 
-" ---------------------------------------------------------
-" Color scheme
-" install
-" apt-vim install -y https://github.com/fneu/breezy.git
-"set background=dark
-""set termguicolors " if you want to run vim in a terminal
-" colorscheme breezy
-
-" apt-vim install -y https://github.com/jansenfuller/crayon.git
-"colorscheme crayon
-" show invisible characters with backslash-l
 " (http://vimcasts.org/episodes/show-invisibles/)
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
@@ -146,17 +123,17 @@ highlight SpecialKey guifg=#4a4a59
 syntax enable
 set background=dark
 "set background=light
-colorscheme solarized
+
+" Missing when vim is first invoked by Ansible to install
+" plugins, therefore silenced
+silent! colorscheme solarized
 
 " Config for Fractal unit tests
 " [11:33:33] Maximiliano Pin:   " \cc
 "
 "   map <Leader>cc :cwindow<cr>:cc<cr><c-w>bz<cr><cr>
 "
-"     " \cn
-"
-"       map <Leader>cn :cwindow<cr>:cn<cr><c-w>bz<cr><cr>
-"
-"         " \cp
-"
-"           map <Leader>cp :cwindow<cr>:cp<cr><c-w>bz<cr><cr>
+" " \cn
+" map <Leader>cn :cwindow<cr>:cn<cr><c-w>bz<cr><cr>
+" " \cp
+" map <Leader>cp :cwindow<cr>:cp<cr><c-w>bz<cr><cr>
