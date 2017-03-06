@@ -17,6 +17,8 @@
   template:
       src: templates/vimrc.j2
       dest: ~/.vimrc
+  notify:
+  - Install vim plugins with vundle
 
 - name: vim bundle dir  | ensure dir exists
   file: path=~/.vim/bundle state=directory
