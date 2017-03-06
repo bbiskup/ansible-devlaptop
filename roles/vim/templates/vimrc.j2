@@ -20,10 +20,8 @@ Plugin 'https://github.com/mileszs/ack.vim.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-
-"powerline: too many dependencies
-"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 
 call vundle#end()            " required
@@ -128,6 +126,10 @@ set background=dark
 " Missing when vim is first invoked by Ansible to install
 " plugins, therefore silenced
 silent! colorscheme solarized
+
+
+" Airline config
+set laststatus=2
 
 " Config for Fractal unit tests
 " [11:33:33] Maximiliano Pin:   " \cc
