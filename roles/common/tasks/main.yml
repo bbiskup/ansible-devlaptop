@@ -36,6 +36,7 @@
     - silversearcher-ag
     - rdiff-backup
     - htop
+    - nmap
     - ack-grep
     - python-dev
     - python-pip
