@@ -1,0 +1,9 @@
+---
+
+- name: install pycharm
+  sudo: yes
+  shell: |
+      cd {{pycharm_install_dir}}
+      tar xzvf /tmp/{{pycharm_archive}}
+      cd {{pycharm_dir}}
+

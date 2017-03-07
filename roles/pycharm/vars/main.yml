@@ -1,0 +1,6 @@
+---
+pycharm_dir: pycharm-community-2016.3.2
+pycharm_archive: "{{pycharm_dir}}.tar.gz"
+pycharm_url_prefix: https://download.jetbrains.com/python/
+pycharm_url: "{{pycharm_url_prefix}}{{pycharm_archive}}"
+pycharm_install_dir: /opt/pycharm

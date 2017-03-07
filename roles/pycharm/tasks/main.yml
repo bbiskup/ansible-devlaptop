@@ -1,0 +1,16 @@
+---
+- name: Create PyCharm installation directory
+  sudo: yes
+  file: name={{pycharm_install_dir}} state=directory
+
+- name: Fetch PyCharm
+  sudo: yes
+  get_url:
+    url: "{{pycharm_url}}"
+    dest: /tmp/{{pycharm_archive}}
+  notify:
+      - install pycharm
+
+- name: create PyCharm link
+  sudo: yes
+  file: src={{pycharm_install_dir}}/{{pycharm_dir}}/bin/pycharm.sh dest=/usr/local/bin/pycharm   state=link 
