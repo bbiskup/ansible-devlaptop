@@ -158,6 +158,13 @@ let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is c
 " vim-autopep8
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
+" python-mode
+"   improve performance https://github.com/python-mode/python-mode/issues/378`
+let g:pymode_rope_lookup_project = 0
+
+let g:pymode_folding = 0
+
+
 " Config for Fractal unit tests
 " [11:33:33] Maximiliano Pin:   " \cc
 "
