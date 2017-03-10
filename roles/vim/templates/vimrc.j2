@@ -26,11 +26,19 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'honza/vim-snippets'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'klen/python-mode'
+Plugin 'tell-k/vim-autopep8'
 
 call vundle#end()            " required
 filetype plugin indent on 
 
 " <----- end of Vundle config
+
+"
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+
+" doxygen comments (Max)
+autocmd Filetype c,cpp set comments^=:///
 
 " used by ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.pyc     " MacOSX/Linux
@@ -145,6 +153,10 @@ set laststatus=2
 let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
 let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
 let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly  
+
+
+" vim-autopep8
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
 " Config for Fractal unit tests
 " [11:33:33] Maximiliano Pin:   " \cc
