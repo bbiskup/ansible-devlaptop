@@ -114,6 +114,7 @@
     - build-essential
     - xbacklight
     - traceroute
+    - cabal-install
 
     # packages not available
     # apt-fast
