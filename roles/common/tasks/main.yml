@@ -43,6 +43,7 @@
     - python3-dev
     - vim
     - git
+    - git-gui
     - gcalcli
     - virtualbox
     - lynx
