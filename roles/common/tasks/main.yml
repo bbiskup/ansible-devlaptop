@@ -138,3 +138,6 @@
   notify:
     -  Update APT cache
     - Install Samsung Universal printer driver 
+
+- name: .pep8 configuration
+  template: src=templates/pep8.j2 dest=~/.pep8
