@@ -40,6 +40,11 @@
     - ack-grep
     - python-dev
     - python-pip
+    - pylint
+    - flake8
+    - prospector
+    - pymetrics
+    - python-mccabe
     - python3-dev
     - vim
     - git
@@ -60,6 +65,8 @@
     - vim-syntax-docker
     - cmake
     - clang
+    - cccc
+    - pmccabe
     - xournal
     - evince
     - virtualenvwrapper
