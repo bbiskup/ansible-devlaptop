@@ -38,6 +38,7 @@
     - htop
     - nmap
     - ack-grep
+    - shutter
     - python-dev
     - python-pip
     - pylint
