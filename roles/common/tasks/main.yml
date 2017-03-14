@@ -46,6 +46,7 @@
     - prospector
     - pymetrics
     - python-mccabe
+    - python-coverage
     - python3-dev
     - vim
     - git
@@ -61,6 +62,7 @@
     - mesa-utils
     - tmux
     - rdiff-backup
+    - duply
     - rsync
     - anki
     - vim-syntax-docker
