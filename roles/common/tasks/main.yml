@@ -63,6 +63,7 @@
     - tmux
     - rdiff-backup
     - duply
+    - sendmail
     - rsync
     - anki
     - vim-syntax-docker
