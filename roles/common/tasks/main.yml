@@ -62,6 +62,7 @@
     - iotop
     - mesa-utils
     - tmux
+    - xclip
     - rdiff-backup
     - duply
     - sendmail
