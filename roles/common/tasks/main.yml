@@ -38,6 +38,7 @@
     - htop
     - nmap
     - ack-grep
+    - kdiff3-qt
     - shutter
     - python-dev
     - python-pip

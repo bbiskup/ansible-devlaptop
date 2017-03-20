@@ -13,7 +13,7 @@
 
 - name: create PyCharm link
   sudo: yes
-  file: src={{pycharm_install_dir}}/{{pycharm_dir}}/bin/pycharm.sh dest=/usr/local/bin/pycharm   state=link 
+  file: src={{pycharm_install_dir}}/{{pycharm_dir}}/bin/pycharm.sh dest=/usr/local/bin/pycharm   state=link force=yes
 
 
 - name: Install IdeaVim plugin config
