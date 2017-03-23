@@ -40,6 +40,8 @@
     - ack-grep
     - kdiff3-qt
     - shutter
+    - python-gtk2-dev  # unlisted dependency of diffuse
+    - diffuse
     - python-dev
     - python-pip
     - pylint
