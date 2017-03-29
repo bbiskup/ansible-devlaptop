@@ -38,6 +38,7 @@
     - htop
     - nmap
     - ack-grep
+    - sloccount
     - kdiff3-qt
     - shutter
     - python-gtk2-dev  # unlisted dependency of diffuse
