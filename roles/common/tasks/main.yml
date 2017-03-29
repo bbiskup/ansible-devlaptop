@@ -45,6 +45,7 @@
     - diffuse
     - python-dev
     - python-pip
+    - cython
     - pylint
     - flake8
     - prospector
