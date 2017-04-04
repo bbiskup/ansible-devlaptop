@@ -34,6 +34,7 @@
   with_items:
     - tree
     - silversearcher-ag
+    - dos2unix
     - rdiff-backup
     - htop
     - nmap
