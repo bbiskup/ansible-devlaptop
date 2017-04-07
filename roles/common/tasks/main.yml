@@ -77,6 +77,8 @@
     - vim-syntax-docker
     - cmake
     - clang
+    - clang-format
+    - clang-tidy
     - cccc
     - pmccabe
     - xournal
