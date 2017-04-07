@@ -13,7 +13,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+" Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plugin 'https://github.com/nanotech/jellybeans.vim.git'
 Plugin 'https://github.com/rhysd/vim-clang-format.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/mileszs/ack.vim.git'
@@ -141,9 +142,12 @@ let g:ctrlp_match_window='let g:ctrlp_match_window=max:30'
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
+" jellybeans
+silent! colorscheme jellybeans
+
 " vim-colors-solarized
 syntax enable
-set background=dark
+" set background=dark
 "set background=light
 
 " Missing when vim is first invoked by Ansible to install
