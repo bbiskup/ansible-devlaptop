@@ -109,9 +109,17 @@ endif
 
 " ------- vim-clang-format
 " set custom executable
-let g:clang_format#command = 'clang-format-3.7'
+let g:clang_format#command = 'clang-format-3.8'
 " automatic formatting
 let g:clang_format#auto_format = 1
+
+let g:clang_format#code_style = 'google'
+
+let g:clang_format#style_options = {
+            \ "IndentWidth" : 2,
+            \ "DerivePointerAlignment": "true",
+            \ "Standard" : "C++11"}
+
 
 " -------- YouCompleteMe
 "YouCompleteMe: python with virtualenv support
@@ -126,6 +134,7 @@ let g:clang_format#auto_format = 1
 
 " ---------------------------------------------------------
 " Misc. key mappings
+
 
 " (http://vimcasts.org/episodes/show-invisibles/)
 nmap <leader>l :set list!<CR>
