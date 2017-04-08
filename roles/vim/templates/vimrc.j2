@@ -148,12 +148,23 @@ highlight SpecialKey guifg=#4a4a59
 
 " vim-colors-solarized
 syntax enable
-set background=dark
-"set background=light
+" set background=dark
+set background=light
 
 " Missing when vim is first invoked by Ansible to install
 " plugins, therefore silenced
 silent! colorscheme solarized
+
+
+" C++ advanced syntax highlighting
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+" workaround for vim bug regarding curly braces
+" https://github.com/octol/vim-cpp-enhanced-highlight
+" let c_no_curly_error=1
 
 
 " Airline config
