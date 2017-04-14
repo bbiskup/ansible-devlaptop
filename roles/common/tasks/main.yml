@@ -32,6 +32,16 @@
     name: "{{item}}"
     state: present
   with_items:
+    - autoconf
+    - automake
+    - m4
+    - libtool
+###     - cups
+###     - libcups2
+###     - libcupscgi1
+###     - libcupsmime1
+###     - cups-core-drivers
+###     - cups-daemon
     - apt-file
     - tree
     - silversearcher-ag
