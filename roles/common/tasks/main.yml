@@ -32,6 +32,8 @@
     name: "{{item}}"
     state: present
   with_items:
+    - valgrind
+    - kcachegrind
     - autoconf
     - automake
     - m4
@@ -150,6 +152,7 @@
     - cabal-install
     - libsdl2-dev
     - libsdl2-image-dev
+    - golang-go
 
     # packages not available
     # apt-fast
