@@ -76,6 +76,8 @@
     - lynx
     - vagrant
     - valgrind
+    - ddd
+    - nemiver
     - cgdb
     - powertop
     - iotop
