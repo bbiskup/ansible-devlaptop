@@ -32,6 +32,7 @@
     name: "{{item}}"
     state: present
   with_items:
+    - moreutils
     - valgrind
     - kcachegrind
     - autoconf
@@ -83,6 +84,7 @@
     - iotop
     - mesa-utils
     - tmux
+    - tmuxinator
     - xclip
     - rdiff-backup
     - duply
@@ -141,7 +143,7 @@
     - volti
     - feh
     - lm-sensors
-    - skype
+    - skypeforlinux
     - apt-fast
     - i3status
     - i3lock
