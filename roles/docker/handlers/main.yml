@@ -1,0 +1,13 @@
+---
+- name: Update APT cache
+  sudo: yes
+  shell: apt-get update
+
+
+- name: Install packages for docker
+  sudo: yes
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - docker-engine
