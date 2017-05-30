@@ -54,6 +54,7 @@
     - nmap
     - ack-grep
     - sloccount
+    - nginx
     - kdiff3-qt
     - shutter
     - python-gtk2-dev  # unlisted dependency of diffuse
@@ -162,6 +163,14 @@
     # apt-fast
     # skype
     # firebird
+
+# We only want nginx to be available, not serving anything
+- name: disable nginx
+  sudo: yes
+  systemd:
+    name: nginx
+    state: stopped
+    enabled: false
 
 - name: Fetch keyring for Samsung Universal Printer repo
   get_url:
