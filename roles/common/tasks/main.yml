@@ -158,6 +158,7 @@
     - libsdl2-dev
     - libsdl2-image-dev
     - golang-go
+    - nagios3
 
     # packages not available
     # apt-fast
