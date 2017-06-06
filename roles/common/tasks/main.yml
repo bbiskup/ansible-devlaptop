@@ -46,6 +46,7 @@
 ###     - cups-core-drivers
 ###     - cups-daemon
     - apt-file
+    - mmv
     - tree
     - silversearcher-ag
     - dos2unix
