@@ -160,6 +160,9 @@
     - libsdl2-image-dev
     - golang-go
     - nagios3
+    - reiser4progs
+    - reiserfsprogs
+    - fstransform
 
     # packages not available
     # apt-fast
