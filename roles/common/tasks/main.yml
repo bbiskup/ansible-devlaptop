@@ -34,6 +34,7 @@
   with_items:
     - smartmontools
     - gsmartcontrol
+    - gparted
     - moreutils
     - valgrind
     - kcachegrind
