@@ -8,8 +8,8 @@
       regexp: "^blacklist i2c_designware-platform"
       line: blacklist i2c_designware-platform
 
-- name: Install Slack
-  become: yes
-  become_user: root
-  apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.2-amd64.deb
+# - name: Install Slack
+#   become: yes
+#   become_user: root
+#   apt:
+#     deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.2-amd64.deb
