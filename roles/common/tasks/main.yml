@@ -32,6 +32,7 @@
     name: "{{item}}"
     state: present
   with_items:
+    - speedtest-cli
     - smartmontools
     - gsmartcontrol
     - gparted
