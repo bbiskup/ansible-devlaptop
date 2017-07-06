@@ -13,3 +13,24 @@
 #   become_user: root
 #   apt:
 #     deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-2.6.2-amd64.deb
+
+
+# Needed for git from /cad/git/latest/bin
+- name: Create symbolic link to libcrypto 
+  become: yes
+  become_user: root
+  file:
+    state: link
+    owner: root
+    src: /lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+    dest: /lib/x86_64-linux-gnu/libcrypto.so.6
+    
+# Needed for git from /cad/git/latest/bin
+- name: Create symbolic link to libssl
+  become: yes
+  become_user: root
+  file:
+    state: link
+    owner: root
+    src: /lib/x86_64-linux-gnu/libssl.so.1.0.0
+    dest: /lib/x86_64-linux-gnu/libssl.so.6
