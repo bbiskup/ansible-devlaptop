@@ -26,3 +26,11 @@
       url: https://github.com/docker/compose/releases/download/1.13.0/run.sh
       dest: /usr/local/bin/docker-compose
       mode: ugo+x
+
+- name:
+  become: yes
+  become_user: root
+  get_url:
+    url: https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-Linux-x86_64
+    dest: /usr/local/bin/docker-machine
+    mode: ugo+x
