@@ -204,3 +204,11 @@
 
 - name: .pep8 configuration
   template: src=templates/pep8.j2 dest=~/.pep8
+
+- name: Download nodejs
+  shell: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+      
+- name: Install nodejs
+  sudo: yes
+  shell: apt-get install -y nodejs
+
