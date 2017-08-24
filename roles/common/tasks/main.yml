@@ -103,7 +103,7 @@
     - vim-syntax-docker
     - cmake
     - clang
-    - clang-format
+    - clang-format-4.0
     - clang-tidy
     - cccc
     - pmccabe
