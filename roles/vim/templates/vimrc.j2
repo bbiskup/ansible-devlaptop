@@ -109,17 +109,20 @@ endif
 
 " ------- vim-clang-format
 " set custom executable
-let g:clang_format#command = 'clang-format-3.8'
+
+" Version 4 required for qtest development
+let g:clang_format#command = 'clang-format-4.0'
 " automatic formatting
-" let g:clang_format#auto_format = 1
+let g:clang_format#auto_format = 1
 
-let g:clang_format#code_style = 'google'
+" Use .clang-format (typically in project directory)
+let g:clang_format#code_style = 'file'
 
-let g:clang_format#style_options = {
-            \ "ColumnLimit" : 120,
-            \ "IndentWidth" : 2,
-            \ "DerivePointerAlignment": "true",
-            \ "Standard" : "C++11"}
+" let g:clang_format#style_options = {
+"             \ "ColumnLimit" : 120,
+"             \ "IndentWidth" : 2,
+"             \ "DerivePointerAlignment": "true",
+"             \ "Standard" : "C++11"}
 
 
 " -------- YouCompleteMe
