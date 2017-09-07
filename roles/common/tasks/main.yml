@@ -51,6 +51,8 @@
 ###     - libcupsmime1
 ###     - cups-core-drivers
 ###     - cups-daemon
+    - sqlite3
+    - sqliteman
     - openssh-server
     - apt-file
     - mmv
