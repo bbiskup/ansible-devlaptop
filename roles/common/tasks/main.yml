@@ -175,6 +175,12 @@
     - reiserfsprogs
     - fstransform
 
+    # For sourceweb
+    - libqt4-dev
+    - libclang-3.8-dev
+    - llvm-3.8-dev
+    - libqt4-dev
+
     # packages not available
     # apt-fast
     # skype
