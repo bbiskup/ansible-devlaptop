@@ -9,6 +9,8 @@
     - python-autopep8
     - silversearcher-ag
     - ack-grep
+    - exuberant-ctags
+    - cscope
     - vim
     - vim-syntax-docker
     - exuberant-ctags
