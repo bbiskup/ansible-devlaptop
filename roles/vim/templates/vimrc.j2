@@ -202,8 +202,8 @@ map <leader>j :set makeprg=./mymake <CR>:make <CR>:copen<CR>
 " cscope
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
-Some optional key mappings to search directly.
 
+" Some optional key mappings to search directly.
 " s: Find this C symbol
 nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
 " g: Find this definition
