@@ -17,6 +17,14 @@
   notify:
     -  Update APT cache
 
+- name: Add Skype repository
+  sudo: yes
+  apt_repository:
+    repo: deb https://repo.skype.com/deb/ unstable main
+    state: present
+  notify:
+    -  Update APT cache
+
 - name: Add apt-fast repository
   sudo: yes
   apt_repository:
