@@ -40,6 +40,7 @@
     name: "{{item}}"
     state: present
   with_items:
+    - k3b
     - colordiff
     - geeqie
     - speedtest-cli
