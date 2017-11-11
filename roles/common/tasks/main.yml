@@ -40,6 +40,8 @@
     name: "{{item}}"
     state: present
   with_items:
+    - ninja-build
+    - ninja-build-doc
     - k3b
     - colordiff
     - geeqie
