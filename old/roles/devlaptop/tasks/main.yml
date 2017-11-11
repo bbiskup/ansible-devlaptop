@@ -247,6 +247,9 @@
   - Install vim plugin YouCompleteMe
 
 
+# Nix does not support installation as root via install script
+- name: Install nix package manager
+  shell: curl https://nixos.org/nix/install | sh
 
 
 ###### misc stuff to add to Ansible scripts:

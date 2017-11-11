@@ -247,7 +247,3 @@
   shell: apt-get install -y nodejs
 
 
-# Nix does not support installation as root via install script
-- name: Install nix package manager
-  shell: curl https://nixos.org/nix/install | sh
-  tags: [xx]
