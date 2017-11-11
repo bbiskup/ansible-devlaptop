@@ -1,6 +1,7 @@
 ---
 - name: install packages for vim
-  sudo: yes
+  become: yes
+  become_user: root
   apt:
     name: "{{item}}"
     state: present

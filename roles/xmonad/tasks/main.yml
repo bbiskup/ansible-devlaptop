@@ -1,7 +1,8 @@
 ---
 
 - name: Add TouchPad indicator repo
-  sudo: yes
+  become: yes
+  become_user: root
   apt_repository:
     repo: 'ppa:atareao/atareao'
     state: present
@@ -9,7 +10,8 @@
     -  Update APT cache
 
 - name: install packages for xmonad
-  sudo: yes
+  become: yes
+  become_user: root
   apt:
     name: "{{item}}"
     state: present

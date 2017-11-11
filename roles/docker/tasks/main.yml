@@ -2,14 +2,16 @@
 
 
 - name: Install Docker repository key
-  sudo: yes
+  become: yes
+  become_user: root
   apt_key:
     id: 58118E89F3A912897C070ADBF76221572C52609D
     keyserver: hkp://p80.pool.sks-keyservers.net:80
     state: present
 
 - name: Add Docker repository
-  sudo: yes
+  become: yes
+  become_user: root
   apt_repository:
     repo: deb https://apt.dockerproject.org/repo {{ ansible_lsb.id|lower }}-{{ ansible_lsb.codename|lower }} main
     state: present
@@ -21,7 +23,8 @@
 
 # We need support for syntax >= 2 
 - name: Install docker-compose
-  sudo: yes
+  become: yes
+  become_user: root
   get_url: 
       url: https://github.com/docker/compose/releases/download/1.13.0/run.sh
       dest: /usr/local/bin/docker-compose

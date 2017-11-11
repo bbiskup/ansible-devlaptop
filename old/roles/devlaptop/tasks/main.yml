@@ -1,7 +1,8 @@
 ---
 
 - name: install packages
-  sudo: yes
+  become: yes
+  become_user: root
   apt:
     name: "{{item}}"
     state: present
@@ -179,7 +180,8 @@
 
 - name: Fix touch pad palm detection (might not work correctly
   # http://seb.mamessier.com/dell-xps-15-9550-ubuntu-16-04/
-  sudo: yes
+  become: yes
+  become_user: root
   lineinfile: 
       destfile: /etc/modprobe.d/blacklist.conf 
       regexp: "^blacklist i2c_designware-platform"
@@ -193,7 +195,8 @@
     - Install Samsung Universal printer driver
 
 - name: Add Samsung Universal printer driver repo
-  sudo: yes
+  become: yes
+  become_user: root
   apt_repository:
       repo: deb http://www.bchemnet.com/suldr/ debian extra
   notify:
@@ -202,7 +205,8 @@
 
 
 # - name: Add nvidia repo
-#  sudo: yes
+  become: yes
+  become_user: root
 #  apt_repository:
 #      repo: 'ppa:graphics-drivers/ppa'
 

@@ -1,11 +1,13 @@
 ---
 - name: Update APT cache
-  sudo: yes
+  become: yes
+  become_user: root
   shell: apt-get update
 
 
 - name: Install packages for docker
-  sudo: yes
+  become: yes
+  become_user: root
   apt:
     name: "{{item}}"
     state: present

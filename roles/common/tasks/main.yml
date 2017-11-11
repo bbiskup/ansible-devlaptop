@@ -1,6 +1,7 @@
 ---
 - name: remove conflicting packages
-  sudo: yes
+  become: yes
+  become_user: root
   apt:
     name: "{{item}}"
     state: absent
@@ -10,7 +11,8 @@
 
 
 - name: Add Canonical partner repo (for skype etc.)
-  sudo: yes
+  become: yes
+  become_user: root
   apt_repository:
     repo: deb http://archive.canonical.com/ubuntu xenial partner
     state: present
@@ -18,7 +20,8 @@
     -  Update APT cache
 
 - name: Add Skype repository
-  sudo: yes
+  become: yes
+  become_user: root
   apt_repository:
     repo: deb https://repo.skype.com/deb/ unstable main
     state: present
@@ -26,7 +29,8 @@
     -  Update APT cache
 
 - name: Add apt-fast repository
-  sudo: yes
+  become: yes
+  become_user: root
   apt_repository:
     repo: 'ppa:saiarcot895/myppa'
     state: present
@@ -35,7 +39,8 @@
 
 
 - name: install common packages
-  sudo: yes
+  become: yes
+  become_user: root
   apt:
     name: "{{item}}"
     state: present
@@ -203,7 +208,8 @@
 
 # We only want nginx to be available, not serving anything
 - name: disable nginx
-  sudo: yes
+  become: yes
+  become_user: root
   systemd:
     name: nginx
     state: stopped
@@ -215,12 +221,14 @@
     dest: /tmp/suldr-keyring_2_all.deb
 
 - name: Install keyring for Samsung Universal Printer repo
-  sudo: yes
+  become: yes
+  become_user: root
   shell: dpkg -i /tmp/suldr-keyring_2_all.deb
 
 
 - name: Add Samsung Universal printer driver repo
-  sudo: yes
+  become: yes
+  become_user: root
   apt_repository:
       repo: deb http://www.bchemnet.com/suldr/ debian extra
   notify:
@@ -234,7 +242,8 @@
   shell: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
       
 - name: Install nodejs
-  sudo: yes
+  become: yes
+  become_user: root
   shell: apt-get install -y nodejs
 
 

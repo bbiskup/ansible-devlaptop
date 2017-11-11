@@ -1,10 +1,12 @@
 ---
 - name: Create PyCharm installation directory
-  sudo: yes
+  become: yes
+  become_user: root
   file: name={{pycharm_install_dir}} state=directory
 
 - name: Fetch PyCharm
-  sudo: yes
+  become: yes
+  become_user: root
   get_url:
     url: "{{pycharm_url}}"
     dest: /tmp/{{pycharm_archive}}
@@ -12,7 +14,8 @@
       - install pycharm
 
 - name: create PyCharm link
-  sudo: yes
+  become: yes
+  become_user: root
   file: src={{pycharm_install_dir}}/{{pycharm_dir}}/bin/pycharm.sh dest=/usr/local/bin/pycharm   state=link force=yes
 
 
