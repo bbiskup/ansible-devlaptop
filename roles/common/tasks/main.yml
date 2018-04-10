@@ -46,6 +46,7 @@
     state: present
   with_items:
     - hardinfo
+    - inxi
     - ipython-qtconsole
     - ipython3-qtconsole
     - ninja-build
