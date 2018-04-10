@@ -45,6 +45,7 @@
     name: "{{item}}"
     state: present
   with_items:
+    - hardinfo
     - ipython-qtconsole
     - ipython3-qtconsole
     - ninja-build
