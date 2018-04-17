@@ -45,6 +45,7 @@
     name: "{{item}}"
     state: present
   with_items:
+    - dialog
     - hardinfo
     - inxi
     - ipython-qtconsole
