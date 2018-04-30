@@ -45,6 +45,7 @@
     name: "{{item}}"
     state: present
   with_items:
+    - libevent-dev
     - blueman
     - dialog
     - hardinfo
