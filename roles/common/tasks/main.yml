@@ -45,6 +45,10 @@
     name: "{{item}}"
     state: present
   with_items:
+    - kompare
+    - python-gi-cairo  # for kompare
+    - meld
+    - diffuse
     - libevent-dev
     - blueman
     - dialog
