@@ -29,6 +29,8 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'drmikehenry/vim-headerguard'
 Plugin 'scrooloose/syntastic'
 Plugin 'gioele/vim-autoswap'
+Plugin 'https://github.com/AndrewRadev/sideways.vim'
+
 
 " disabled because of poor performance of rope
 " Plugin 'klen/python-mode'
@@ -225,12 +227,18 @@ nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
+
+" syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_pylint_post_args="--max-line-length=120"
+
+# sideways
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
