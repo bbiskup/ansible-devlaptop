@@ -27,7 +27,7 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'honza/vim-snippets'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'drmikehenry/vim-headerguard'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'gioele/vim-autoswap'
 Plugin 'https://github.com/AndrewRadev/sideways.vim'
 
@@ -238,6 +238,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>f :SyntasticToggleMode<CR>
+
 
 " sideways
 nnoremap <c-h> :SidewaysLeft<cr>
