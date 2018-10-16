@@ -45,6 +45,10 @@
     name: "{{item}}"
     state: present
   with_items:
+    - pax-utils
+    - patchelf
+    - execstack
+    - elfutils
     - dstat
     - kompare
     - python-gi-cairo  # for kompare
